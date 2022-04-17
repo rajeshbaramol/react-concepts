@@ -11,6 +11,7 @@ export default function App() {
       <Checkbox>
         <CheckboxInput />
         <Label>Checkbox</Label>
+        <LabelasFunction> || function label</LabelasFunction>
       </Checkbox>
     </div>
   );
@@ -48,3 +49,11 @@ class Label extends React.Component {
     );
   }
 }
+
+const LabelasFunction = ({ children, checked, setChecked }) => {
+  return (
+    <label checked={checked} onClick={() => setChecked(!checked)}>
+      {children}
+    </label>
+  );
+};
